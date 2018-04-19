@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,25 +33,48 @@
                                     <constraint firstAttribute="height" constant="60" id="gvP-4U-TlG"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="ula-p1-jWH" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
-                                <rect key="frame" x="75" y="175" width="225" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ula-p1-jWH" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="36" y="150" width="303" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.4006195068359375" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="yX7-2d-E3h"/>
+                                </constraints>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p5n-i8-xPQ" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="36" y="215" width="303" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40061950680000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8ds-1t-5fE"/>
+                                </constraints>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="p5n-i8-xPQ" firstAttribute="top" secondItem="ula-p1-jWH" secondAttribute="bottom" constant="25" id="1dy-PN-kgO"/>
                             <constraint firstAttribute="trailing" secondItem="r1j-JS-mGJ" secondAttribute="trailing" id="4kE-xO-qz4"/>
                             <constraint firstItem="r1j-JS-mGJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8N3-4K-A4h"/>
+                            <constraint firstItem="p5n-i8-xPQ" firstAttribute="trailing" secondItem="ula-p1-jWH" secondAttribute="trailing" id="CYb-kM-2Di"/>
+                            <constraint firstItem="ula-p1-jWH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="GIj-uU-Sax"/>
                             <constraint firstItem="r1j-JS-mGJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="I4m-XG-VA3"/>
+                            <constraint firstItem="p5n-i8-xPQ" firstAttribute="leading" secondItem="ula-p1-jWH" secondAttribute="leading" id="ISD-ou-ZPo"/>
                             <constraint firstItem="i90-Ef-DJn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JtI-rO-QfT"/>
+                            <constraint firstItem="ula-p1-jWH" firstAttribute="top" secondItem="i90-Ef-DJn" secondAttribute="bottom" constant="35" id="bx4-0N-s5u"/>
                             <constraint firstItem="yBR-kP-f9e" firstAttribute="top" secondItem="r1j-JS-mGJ" secondAttribute="bottom" id="dPD-yW-Egq"/>
                             <constraint firstItem="i90-Ef-DJn" firstAttribute="top" secondItem="st1-Fj-xbd" secondAttribute="bottom" constant="35" id="g1h-k2-F6b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ula-p1-jWH" secondAttribute="trailing" constant="20" id="iz8-ZA-afg"/>
+                            <constraint firstItem="p5n-i8-xPQ" firstAttribute="height" secondItem="ula-p1-jWH" secondAttribute="height" id="s7n-NA-k4m"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="priceTxt" destination="p5n-i8-xPQ" id="4mq-Fl-rX2"/>
+                        <outlet property="wageTxt" destination="ula-p1-jWH" id="5ar-yk-9La"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
